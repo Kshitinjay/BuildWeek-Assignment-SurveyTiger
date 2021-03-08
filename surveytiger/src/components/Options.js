@@ -7,8 +7,8 @@ const Options = ({addOptions,removeOptions}) => {
         <div className="input-group">
           <input type="text" className="form-control" placeholder="Add options"/>
           <div className="input-group-append">
-              <button className="btn btn-outline-secondary ms-1 me-1" type="button" onClick={()=> addOptions}>+</button>
-              <button className="btn btn-outline-secondary" type="button" onClick={()=> removeOptions}>-</button>
+              <button className="btn btn-outline-secondary ms-1 me-1" type="button" onClick={()=> addOptions()}>+</button>
+              <button className="btn btn-outline-secondary" type="button" onClick={()=> removeOptions()}>-</button>
           </div>
         </div>
       </div>
