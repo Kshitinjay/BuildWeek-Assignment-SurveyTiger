@@ -1,24 +1,18 @@
-import React from "react";
-
-const Question = ({ quesText, setQuesText }) => {
+const Question = ({ onTextUpdate }) => {
   return (
     <>
-      <div className="col-md-10 offset-md-1 col-12 my-4">
-        <div className="input-group">
+      <div className="col-lg-12 col-md-6 mx-auto input-group my-3">
+        <div className="input-group-prepend">
           <span className="input-group-text" id="basic-addon1">
             ?
-          </span>{" "}
-          <input
-            type="text"
-            value={quesText}
-            className="form-control"
-            placeholder="Question"
-            onChange={(event) => {
-              let que = event.target.value;
-              setQuesText(que);
-            }}
-          />
+          </span>
         </div>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Question"
+          onChange={(event) => onTextUpdate(event.target.value)}
+        />
       </div>
     </>
   );

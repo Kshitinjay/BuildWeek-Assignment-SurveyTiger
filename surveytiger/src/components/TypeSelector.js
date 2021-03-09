@@ -1,25 +1,21 @@
-import React from "react";
-
-const TypeSelector = ({ quesType, setQuesType }) => {
+const TypeSelector = ({ qtype, setQtype }) => {
   return (
-    <div className="col-md-10 offset-md-1 col-12 ">
-      <div className="input-group">
+    <>
+      <div className="col-lg-12 col-md-6 mx-auto">
         <select
           className="form-select"
-          value={quesType}
+          value={qtype}
           onChange={(event) => {
             let type = parseInt(event.target.value);
-            setQuesType(type);
+            setQtype(type);
           }}
         >
-          <option defaultValue value="0">
-            Choose Question Type
-          </option>
+          <option value="0">Choose Question Type</option>
           <option value="1">Multi-Select</option>
           <option value="2">Single-Select</option>
         </select>
       </div>
-    </div>
+    </>
   );
 };
 

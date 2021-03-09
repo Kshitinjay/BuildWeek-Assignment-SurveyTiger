@@ -1,18 +1,33 @@
-import React from "react";
-
-const Options = ({addOptions,removeOptions,id}) => {
+const Options = ({ addOptions, deleteOptions, uid, updateText }) => {
   return (
-    <div>
-      <div className="col-md-10 offset-md-1 col-12 mt-2">
-        <div className="input-group">
-          <input type="text" className="form-control" placeholder="Add options"/>
-          <div className="input-group-append">
-              <button className="btn btn-outline-secondary ms-1 me-1" type="button" onClick={()=> addOptions()}>+</button>
-              <button className="btn btn-outline-secondary" id={id}  type="button" onClick={()=> removeOptions(id)}>-</button>
-          </div>
+    <>
+      <div className="col-lg-12 col-md-6 mx-auto input-group my-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Option Text"
+          onChange={(event) => {
+            updateText(uid, event.target.value);
+          }}
+        />
+        <div className="input-group-append">
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            onClick={() => addOptions()}
+          >
+            +
+          </button>
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            onClick={() => deleteOptions()}
+          >
+            -
+          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
